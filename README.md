@@ -12,4 +12,3 @@ To play:
  
 Enter 1 for ROCK, 2 for PAPER or 3 for scissors, or 0 to quit. Followed by enter.
 
-To quit: Press CTRL+C.
