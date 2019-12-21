@@ -1,3 +1,13 @@
+/**
+ * This is a classic rock-paper-scissors game.
+ * 
+ * To build: mvn instal
+ * 
+ * To run: java -jar target/rockpaperscissors-1.0.jar
+ * 
+ * To play: Enter 1 for ROCK, 2 for PAPER or 3 for scissors, or 0 to quit. Followed by enter.
+ */
+
 package democoder.rockpaperscissors;
 
 import java.util.Random;
@@ -14,12 +24,15 @@ public class RockPaperScissors {
 	static int computerScore = 0;
 	static Random rand = new Random();
 
+	/**
+	 * Main loop of the game.
+	 * 
+	 * @param args No arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome to the rock, paper and scissors game.");
 		int choice = -1;
 		while (playing) {
-			// Computer lets choose
-
 			System.out.println(
 					"Please enter 1 for ROCK, 2 for PAPER or 3 for scissors, or 0 to quit. Followed by enter.");
 			try {
@@ -45,9 +58,15 @@ public class RockPaperScissors {
 		}
 	}
 
+	/**
+	 * Determine which player wins by his choosing.
+	 * 
+	 * @param playerChoice
+	 * @param computerCoice
+	 */
 	public static void determineWinner(int playerChoice, int computerCoice) {
 		if (playerChoice == computerChoice) {
-			System.out.println("It's a tie. Both selected "+playerChoice);
+			System.out.println("It's a tie. Both selected " + playerChoice);
 			return;
 		}
 
@@ -55,22 +74,22 @@ public class RockPaperScissors {
 			System.out.println("You won! Rock beats scissors.");
 			playerScore++;
 		}
-		
+
 		if (playerChoice == ROCK && computerChoice == PAPER) {
 			System.out.println("Computer won! Papers beat rock.");
 			playerScore++;
 		}
-		
+
 		if (playerChoice == PAPER && computerChoice == ROCK) {
 			System.out.println("You won! Paper beats rock.");
 			playerScore++;
 		}
-		
+
 		if (playerChoice == PAPER && computerChoice == SCISSORS) {
 			System.out.println("Computer won! Scissors beats paper.");
 			computerScore++;
 		}
-		
+
 		if (playerChoice == SCISSORS && computerChoice == PAPER) {
 			System.out.println("You won! Scissors beats paper.");
 			playerScore++;
@@ -80,7 +99,6 @@ public class RockPaperScissors {
 			System.out.println("Computer won! Rock beats scissors.");
 			computerScore++;
 		}
-
 
 		System.out.println("Score: Player " + playerScore + ", computer " + computerScore + ".");
 	}
